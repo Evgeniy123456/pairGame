@@ -2,44 +2,98 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Игра в пары</title>
-    <link rel="icon" type="image/x-icon" href="./img/favicon-game.svg">
-    <link rel="stylesheet" href="./src/css/normalize.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="./src/css/hover-min.css">
-    <link rel="stylesheet" href="./src/css/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Игра в пары</title>
+  <link rel="icon" type="image/x-icon" href="./src/img/favicon-game.svg">
+  <link rel="stylesheet" href="./src/css/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/btn-main.css">
+  <link rel="stylesheet" href="./src/css/main.css">
 </head>
 
 <body>
-  <section class="game">
+  <section class="main">
     <div class="container">
-      <div  class="game__window">
-        <div class="container-h1 animate__animated animate__backInDown">
-            <svg viewBox="0 0 960 300">
-              <symbol id="s-text">
-                <text text-anchor="middle" x="50%" y="80%">Super game</text>
-              </symbol>
-              <g class = "g-ants">
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-                <use xlink:href="#s-text" class="text-copy"></use>
-              </g>
-            </svg>
-        </div>
-        <div class="game__block game flex animate__animated animate__backInUp" id="game"></div>
-        <button class="game__button btn-reset flex animate__animated animate__bounceIn" id="gameButton" type="button" tabindex="0">
-          Начать новую игру
-        </button>
+
+      <div class="container-h1 animate__animated animate__backInDown">
+        <svg viewBox="0 0 960 300">
+          <symbol id="s-text">
+            <text text-anchor="middle" x="50%" y="50%">Super game</text>
+          </symbol>
+          <g class="g-ants">
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+            <use xlink:href="#s-text" class="text-copy"></use>
+          </g>
+        </svg>
       </div>
+
+      <h1 class="main__title">Выберите режим игры:</h1>
+
+      <div class="main__block-param">
+
+        <div class="main__card">
+          <p class="main__descr">
+            Cколько человек будет играть:
+          </p>
+          <label class="checkbox" for="checkboxPeople1">
+            <input class="checkbox__inp" type="checkbox" id="checkboxPeople1">
+            <span class="checkbox__inner">
+              1
+            </span>
+          </label>
+
+          <label class="checkbox" for="checkboxPeople2">
+            <input class="checkbox__inp" type="checkbox" checked id="checkboxPeople2">
+            <span class="checkbox__inner">
+              2
+            </span>
+          </label>
+
+        </div>
+
+        <div class="main__card">
+          <p class="main__descr">Выберите размер поля:</p>
+
+          <label class="checkbox" for="checkbox">
+            <input class="checkbox__inp" type="checkbox" id="checkbox">
+            <span class="checkbox__inner">
+              5 х 2
+            </span>
+          </label>
+
+          <label class="checkbox" for="checkbox1">
+            <input class="checkbox__inp" type="checkbox" checked id="checkbox1">
+            <span class="checkbox__inner">
+              5 х 4
+            </span>
+          </label>
+        </div>
+
+        <div class="main__card">
+          <p class="main__descr">Введите имена игроков:</p>
+          <input class="main__input" id="inp-1" type="text" placeholder="Игрок 1">
+          <input class="main__input" id="inp-2" type="text" placeholder="Игрок 2">
+        </div>
+
+      </div>
+
+      <div class="main__btn-block">
+        <a href="game.html" class="main__btn sparkles">
+          <span>Начать игру</span>
+        </a>
+      </div>
+
+      <p class="main__regulations">Правила игры</p>
     </div>
   </section>
-  <footer class="game__footer flex">P.S. супер игра из будущего</footer>
-  <script type="module" src="./src/js/main.js"></script>
+
+  <script type="module" src="./src/js/index.js"></script>
 </body>
 
 </html>
