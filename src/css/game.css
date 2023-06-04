@@ -1,0 +1,148 @@
+.game__block {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+  width: 100%;
+  height: 90vh;
+  padding-bottom: 20px;
+  margin: 4% 0 2% 0;
+}
+
+@media (max-width:768px) {
+  .game__block {
+    padding-bottom: 30px;
+  }
+}
+
+.game__card {
+  width: 18%;
+  height: 20%;
+  color: transparent;
+  background-image: url('/src/img/bgi-card.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  border-radius: 10px;
+  cursor: pointer;
+  /* filter: grayscale(200); */
+  transition: filter .3s ease-in-out,
+    opacity .3s ease-in-out,
+    background-color .3s ease-in-out,
+    color .3s ease-in-out,
+    outline .3s ease-in-out;
+}
+
+.game__card:focus-visible {
+  outline: 4px solid black;
+  outline-offset: 3px;
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.game__card:hover {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.game__card:active {
+  outline: 4px solid rgb(62, 101, 243);
+  outline-offset: 3px;
+}
+
+.game__card.open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(63, 94, 251);
+  background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(62, 57, 58, 1) 100%);
+  color: red;
+  font-size: 42px;
+  font-weight: bold;
+  border: 3px solid red;
+  z-index: 1;
+  opacity: 1;
+}
+
+.game__card.success {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  font-weight: bold;
+  background: rgb(36, 249, 2);
+  background: radial-gradient(circle, rgba(36, 249, 2, 1) 0%, rgba(57, 59, 62, 1) 100%);
+  color: red;
+  border: 3px solid red;
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+.game__button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.game__button-btn {
+  display: none;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+.game__button-btn.restart {
+  display: inline-block;
+}
+
+/*footer*/
+.game__footer {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  color: antiquewhite;
+}
+
+@media (max-width:440px) {
+
+  .game__footer {
+    display: none;;
+  }
+}
+
+.game__main {
+
+  .game__main-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 30px;
+  }
+
+  .sparkles {
+    font-size: 16px;
+  }
+
+  .sparkles span {
+    padding: 10px 20px;
+  }
+}
+
+.block-player {
+  position: fixed;
+  top: 40px;
+  left: 30px;
+}
+
+.title-player {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.name-player {
+  color: white;
+  margin-bottom: 14px;
+}

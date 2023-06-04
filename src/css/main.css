@@ -1,0 +1,251 @@
+.main {
+  position: relative;
+  padding-top: 180px;
+
+  @media (max-width:1024px) {
+    padding-top: 140px;
+  }
+}
+
+.main__title {
+  margin-bottom: 40px;
+  font-size: 40px;
+  color: white;
+
+  @media (max-width:1024px) {
+    font-size: 30px;
+  }
+}
+
+.main__descr {
+  margin-bottom: 30px;
+  font-size: 20px;
+  color: white;
+
+  @media (max-width:1024px) {
+    font-size: 16px;
+  }
+}
+
+.main__block-param {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+  gap: 20px;
+
+  @media (max-width:1024px) {
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+}
+
+.main__card {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  width: max-content;
+  background-color: #840037;
+  border-radius: 20px;
+}
+
+.main__input {
+  padding: 10px 10px 10px 20px;
+  border-radius: 20px;
+  border: none;
+  font-size: 24px;
+}
+
+.main__input:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.main__regulations {
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+
+  @media (max-width:1024px) {
+    font-size: 14px;
+  }
+}
+
+.main__regulations::after {
+  content: 'Суть игры очень простая. Карты выкладываются на стол «рубашкой» вверх. Далее по очереди каждый игрок открывает две любые карты. Если на них изображены одинаковые рисунки(цифры), он получает бал себе, и вскрывает следующую пару. Однако, если рисунки(цифры) разные, то карты возвращаются в исходное состояние на свои места, а ход переходит следующему игроку. Когда все карты будут разобраны, выбирается победитель – тот, кто набрал наибольшее количество баллов. ';
+  display: none;
+  position: absolute;
+  bottom: 200%;
+  left: 0;
+  padding: 30px;
+  width: 500%;
+  background-color: #FFFFFF;
+  color: #333333;
+  font-size: 22px;
+  border-radius: 15px;
+
+}
+
+@media (max-width:768px) {
+  .main__regulations::after {
+    padding: 20px;
+    width: 300%;
+    font-size: 14px;
+  }
+}
+
+.main__regulations::before {
+  content: "";
+  display: none;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-width: 20px 15px 0 15px;
+  border-color: #ffffff transparent transparent transparent;
+  border-style: solid;
+}
+
+.main__regulations:hover::after,
+.main__regulations:hover::before {
+  display: block;
+}
+
+.main__btn {
+  margin: 0 auto;
+  max-width: max-content;
+}
+
+/*h1*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.container-h1 {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+
+  @media (max-width:1024px) {
+    top: -50px
+  }
+}
+
+svg {
+  display: block;
+  font: 8em 'Montserrat';
+  height: 300px;
+  margin: 0 auto;
+  transform: translate(-50%);
+
+  @media (max-width:1024px) {
+    font: 6em 'Montserrat';
+  }
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 5px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #4D163D;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #840037;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #BD0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #BD0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #FDB731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
+  100% {
+    stroke-dashoffset: -35%;
+  }
+}
+
+/* check-box */
+.checkbox {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.checkbox:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.checkbox__inp {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  appearance: none;
+}
+
+.checkbox__inner {
+  display: inline-block;
+  position: relative;
+  font-size: 18px;
+  color: white;
+  padding: 8px;
+  padding-left: 74px;
+}
+
+.checkbox__inner:before {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: white;
+  transition: background-color .3s;
+}
+
+.checkbox__inner::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(0, 201, 7);
+  left: 3px;
+  top: 3px;
+  transition: background-color .3s, left .3s;
+}
+
+.checkbox__inp:checked+.checkbox__inner::before {
+  background-color: rgb(0, 201, 7);
+}
+
+.checkbox__inp:checked+.checkbox__inner::after {
+  background-color: white;
+  left: 27px;
+}
+
+.checkbox__inp:focus+.checkbox__inner:before {
+  outline: 1px solid gray;
+  outline-offset: 3px;
+}
